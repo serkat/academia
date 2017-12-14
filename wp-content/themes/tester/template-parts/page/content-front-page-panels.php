@@ -1,0 +1,89 @@
+<?php
+/**
+ * Template part for displaying pages on front page
+ *
+ * @package WordPress
+ * @subpackage Tester
+ * @since 1.0
+ * @version 1.0
+ */
+
+global $twentyseventeencounter;
+
+?>
+
+<section id="panel<?php echo $twentyseventeencounter; ?>" <?php post_class( 'twentyseventeen-panel ' ); ?> >
+
+	<?php if ( has_post_thumbnail() ) :
+//        echo "has thubnail";
+		$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'twentyseventeen-featured-image' );
+
+		// Calculate aspect ratio: h / w * 100%.
+		$ratio = $thumbnail[2] / $thumbnail[1] * 100;
+		?>
+
+		<div class="panel-image" style="background-image: url(<?php echo esc_url( $thumbnail[0] ); ?>);">
+			<div class="panel-image-prop" style="padding-top: <?php echo esc_attr( $ratio ); ?>%"></div>
+		</div><!-- .panel-image -->
+
+	<?php endif; ?>
+
+
+	<div class="panel-content recents">
+		<div class="wrap">
+
+			<div class="entry-content">
+				<?php
+					/* translators: %s: Name of current post */
+					the_content( sprintf(
+						__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'twentyseventeen' ),
+						get_the_title()
+					) );
+				?>
+			</div><!-- .entry-content -->
+
+			<?php
+			// Show recent blog posts if is blog posts page (Note that get_option returns a string, so we're casting the result as an int).
+			if ( get_the_ID() === (int) get_option( 'page_for_posts' )  ) : ?>
+
+				<?php // Show four most recent posts.
+				$recent_posts = new WP_Query( array(
+					'posts_per_page'      => 2,
+					'post_status'         => 'publish',
+					'ignore_sticky_posts' => true,
+					'no_found_rows'       => true,
+				) );
+				?>
+                <h3 class="recents-title">Важные новости</h3>
+
+		 		<?php if ( $recent_posts->have_posts() ) : ?>
+
+					<div class="recent-posts">
+					    <div class="row">
+
+						<?php
+                            while ( $recent_posts->have_posts() ) : $recent_posts->the_post();
+                            ?>
+                                <div class="col-md-6">
+                                    <div class="inner-news">
+                                    <?php
+                                        if ( has_post_thumbnail() ) {
+                                            the_post_thumbnail();
+                                        }
+                                        get_template_part( 'template-parts/post/content', 'excerpt' );
+                                    ?>
+                                    </div>
+                                </div>
+                                <?php
+                            endwhile;
+                            wp_reset_postdata();
+                        ?>
+					    </div><!-- .recent-posts -->
+					</div><!-- .recent-posts -->
+				<?php endif; ?>
+			<?php endif; ?>
+
+		</div><!-- .wrap -->
+	</div><!-- .panel-content -->
+
+</section><!-- #post-## -->

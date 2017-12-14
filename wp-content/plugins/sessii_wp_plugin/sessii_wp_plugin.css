@@ -1,0 +1,12 @@
+/*
+	Шаблон для стилей плагина
+	* Шаблон для создания плагинов Wordpress http://azzrael.ru/ *
+*/
+
+article {
+    display: flex;
+}
+article div {
+    margin: 20px;
+    font-size: 20px;
+}
