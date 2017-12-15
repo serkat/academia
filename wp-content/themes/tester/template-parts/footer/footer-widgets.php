@@ -28,7 +28,7 @@ if ( is_active_sidebar( 'sidebar-2' ) ||
 			</div>
 		<?php } ?>
         <div class="widget-column footer-link">
-            <a href="http://cc49095-wordpress-4.tw1.ru/politika-konfidentsialnosti/">Политика конфиденциальности</a>
+            <a href="http://cc49095-wordpress-4.tw1.ru/politika-konfidentsialnosti/"><p>Политика конфиденциальности</p></a>
         </div>
 	</aside><!-- .widget-area -->
 
