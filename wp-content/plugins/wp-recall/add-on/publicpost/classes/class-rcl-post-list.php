@@ -31,8 +31,23 @@ class Rcl_Postlist {
         $ratings = array();
         $posts = array();
 
-        $posts[] = $wpdb->get_results($wpdb->prepare("SELECT * FROM ".$wpdb->base_prefix."posts WHERE post_author='%d' AND post_type='%s' AND post_status NOT IN ('trash','auto-draft') ORDER BY post_date DESC LIMIT $this->offset, ".$this->in_page,$this->user_id,$this->post_type));
+        $posts[] = $wpdb->get_results($wpdb->prepare("SELECT * FROM ".$wpdb->base_prefix."posts WHERE post_author='%d' AND post_type='bids' AND post_status NOT IN ('trash','auto-draft') ORDER BY post_date DESC LIMIT $this->offset, ".$this->in_page,$this->user_id,$this->post_type));
+       /* $posts[] = $wpdb->get_results($wpdb->prepare("SELECT * FROM ".$wpdb->base_prefix."posts
+        WHERE post_author='%d' AND post_type='bids' AND post_status NOT IN ('trash','auto-draft') 
+        ORDER BY post_date DESC LIMIT $this->offset, ".$this->in_page,$this->user_id,$this->post_type));*/
 
+	    /*$posts[] = $wpdb->get_results($wpdb->prepare("SELECT p.*, v1.meta_value bid_status, v2.meta_value pay_status, v3.meta_value pay_summ, v4.meta_value amount_of_participants FROM wp_posts p JOIN wp_postmeta v1
+    ON p.ID = v1.post_id AND v1.meta_key = 'bid_status'
+JOIN wp_postmeta v2
+    ON p.ID = v2.post_id AND v2.meta_key = 'pay_status'
+JOIN wp_postmeta v3
+    ON p.ID = v3.post_id AND v3.meta_key = 'pay_summ'
+JOIN wp_postmeta v4
+    ON p.ID = v4.post_id AND v4.meta_key = 'amount_of_participants'
+WHERE
+    p.post_type = 'bids' AND post_author='%d' AND p.post_status NOT IN ('trash','auto-draft') ORDER BY post_date DESC LIMIT $this->offset, ".$this->in_page,$this->user_id,$this->post_type));*/
+
+var_dump($posts);
         if(is_multisite()){
             $blog_list = get_blog_list( 0, 'all' );
 

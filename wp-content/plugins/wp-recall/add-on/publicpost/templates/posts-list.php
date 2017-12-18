@@ -6,13 +6,18 @@
 		<td><?php _e('Date','wp-recall'); ?></td>
 		<td><?php _e('Title','wp-recall'); ?></td>
 		<td><?php _e('Status','wp-recall'); ?></td>
+<!--        <td>--><?php //_e('№ заявки','wp-recall'); ?><!--</td>-->
+<!--        <td>--><?php //_e('Статус заявки','wp-recall'); ?><!--</td>-->
+<!--        <td>--><?php //_e('количество участников','wp-recall'); ?><!--</td>-->
+<!--        <td>--><?php //_e('Сумма к оплате','wp-recall'); ?><!--</td>-->
+<!--        <td>--><?php //_e('Статус оплаты','wp-recall'); ?><!--</td>-->
 	</tr>
 
 	<?php foreach($posts as $postdata){ ?>
 
 		<?php foreach($postdata as $post){ setup_postdata($post); ?>
 
-			<?php if($post->post_status=='pending') $status = '<span class="status-pending">'.__('to be approved','wp-recall').'</span>';
+			<?php if($post->post_status=='pending') {$status = '<span class="status-pending">'.__('to be approved','wp-recall').'</span>'; }
 			elseif($post->post_status=='trash') $status = '<span class="status-pending">'.__('deleted','wp-recall').'</span>';
                         elseif($post->post_status=='draft') $status = '<span class="status-draft">'.__('draft','wp-recall').'</span>';
 			else $status = '<span class="status-publish">'.__('published','wp-recall').'</span>'; ?>
