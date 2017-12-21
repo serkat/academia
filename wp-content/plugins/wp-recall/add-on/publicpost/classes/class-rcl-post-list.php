@@ -26,28 +26,42 @@ class Rcl_Postlist {
 
     function get_postslist_table(){
 
-        global $wpdb,$post,$posts,$ratings;
+        global $wpdb,$post,$posts,$ratings, $meta;
 
         $ratings = array();
         $posts = array();
 
-        $posts[] = $wpdb->get_results($wpdb->prepare("SELECT * FROM ".$wpdb->base_prefix."posts WHERE post_author='%d' AND post_type='bids' AND post_status NOT IN ('trash','auto-draft') ORDER BY post_date DESC LIMIT $this->offset, ".$this->in_page,$this->user_id,$this->post_type));
+//        $bids = array(
+//	        'posts_per_page'	=> -1,
+//	        'post_type'			=> 'bids',
+//	        'author'		=> $this->user_id,
+//	        'post_status' => 'any',
+//	        'meta_key' => 'bid_status'
+//        );
+//        $get_posts = new WP_Query($bids);
+
+//        $posts = $get_posts->posts;
+
+
+//        $posts[] = $wpdb->get_results($wpdb->prepare("SELECT * FROM ".$wpdb->base_prefix."posts WHERE post_author='%d' AND post_type='bids' AND post_status NOT IN ('trash','auto-draft') ORDER BY post_date DESC LIMIT $this->offset, ".$this->in_page,$this->user_id,$this->post_type));
        /* $posts[] = $wpdb->get_results($wpdb->prepare("SELECT * FROM ".$wpdb->base_prefix."posts
         WHERE post_author='%d' AND post_type='bids' AND post_status NOT IN ('trash','auto-draft') 
         ORDER BY post_date DESC LIMIT $this->offset, ".$this->in_page,$this->user_id,$this->post_type));*/
 
-	    /*$posts[] = $wpdb->get_results($wpdb->prepare("SELECT p.*, v1.meta_value bid_status, v2.meta_value pay_status, v3.meta_value pay_summ, v4.meta_value amount_of_participants FROM wp_posts p JOIN wp_postmeta v1
+	    $posts[] = $wpdb->get_results($wpdb->prepare("SELECT p.*, v1.meta_value bid_status, v2.meta_value pay_status, v3.meta_value pay_summ, v4.meta_value amount_of_participants FROM wp_posts p LEFT JOIN wp_postmeta v1
     ON p.ID = v1.post_id AND v1.meta_key = 'bid_status'
-JOIN wp_postmeta v2
+LEFT JOIN wp_postmeta v2
     ON p.ID = v2.post_id AND v2.meta_key = 'pay_status'
-JOIN wp_postmeta v3
+LEFT JOIN wp_postmeta v3
     ON p.ID = v3.post_id AND v3.meta_key = 'pay_summ'
-JOIN wp_postmeta v4
+LEFT JOIN wp_postmeta v4
     ON p.ID = v4.post_id AND v4.meta_key = 'amount_of_participants'
 WHERE
-    p.post_type = 'bids' AND post_author='%d' AND p.post_status NOT IN ('trash','auto-draft') ORDER BY post_date DESC LIMIT $this->offset, ".$this->in_page,$this->user_id,$this->post_type));*/
+    p.post_type = 'bids' AND post_author=$this->user_id AND p.post_status NOT IN ('trash','auto-draft') ORDER BY post_date DESC LIMIT $this->offset, ".$this->in_page,$this->user_id));
 
-var_dump($posts);
+//	    echo '<pre>';
+//	    var_dump($posts);
+//	    echo '</pre>';
         if(is_multisite()){
             $blog_list = get_blog_list( 0, 'all' );
 
@@ -60,15 +74,26 @@ var_dump($posts);
         if($posts[0]){
 
             $p_list = array();
-
+//            $meta = array();
+//            foreach ($posts[0] as $each_post) {
+//				$meta[] = get_post_meta($post->ID, 'bid_status', true);
+////	            $p_meta[] = $wpdb->get_results($wpdb->prepare("SELECT meta_value,  FROM ".$wpdb->base_prefix."postmeta WHERE post_id=".$each_post->ID." AND meta_key='bid_status'));
+//
+//            }
+//	        echo '<pre>';
+//	        var_dump($meta);
+//	        echo '</pre>';
 
             if(function_exists('rcl_format_rating')){
-
+				echo "exists";
                 foreach($posts as $postdata){
+//					var_dump($postdata);
                     foreach($postdata as $p){
                         $p_list[] = $p->ID;
+
                     }
                 }
+
 
                 $rayt_p = rcl_get_rating_totals(array(
                         'object_id__in' => $p_list,
@@ -87,12 +112,16 @@ var_dump($posts);
             else 
                 $posts_block = rcl_get_include_template('posts-list.php',__FILE__);
 
+
+
             wp_reset_postdata();
 
         }else{
             $posts_block = '<p>'.$this->type_name.' '.__('has not yet been published','wp-recall').'</p>';
         }
-
+//	    echo '<pre>';
+//            var_dump($posts_block);
+//	    echo '</pre>';
         return $posts_block;
     }
 
@@ -100,7 +129,7 @@ var_dump($posts);
 
         $page_navi = $this->page_navi();
 
-        $posts_block = '<h3>'.__('Published','wp-recall').' "'.$this->type_name.'"</h3>';
+        $posts_block = '<h3>'.__('Заявки','wp-recall').'</h3>';
         
         $posts_block .= $page_navi;
         $posts_block .= $this->get_postslist_table();

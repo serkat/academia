@@ -244,7 +244,19 @@ function rcl_status_desc(){
 
 function rcl_username(){
     global $user_LK;
-    echo get_the_author_meta('display_name',$user_LK);
+    $f_name = get_the_author_meta('first_name',$user_LK);
+    $l_name = get_the_author_meta('last_name',$user_LK);
+    $m_name = get_the_author_meta('otchestvo_45',$user_LK);
+    if ($f_name) echo '<div class="first-name">'
+                      . nl2br(esc_textarea($f_name))
+                      . '</div>';
+    if ($l_name) echo '<div class="last-name">'
+                      . nl2br(esc_textarea($l_name))
+                      . '</div>';
+    if ($m_name) echo '<div class="middle-name">'
+                      . nl2br(esc_textarea($m_name))
+                      . '</div>';
+
 }
 
 function rcl_notice(){

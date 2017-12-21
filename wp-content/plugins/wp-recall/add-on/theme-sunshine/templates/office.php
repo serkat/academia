@@ -4,7 +4,8 @@ This script uses original idea Dasari Srinivas
 http://blog.sodhanalibrary.com/2014/01/responsive-menu-or-navigation-bar-with.html
 идея скрипта группировок кнопок принадлежит ему.
 */
-
+$user = wp_get_current_user();
+$home_url = get_home_url();
 // над и под кабинетом и внутри регистрируем 3 зоны виджетов dynamic_sidebar
 // верю что пользователям пригодятся - учитывая что дизайн этого шаблона на всю ширину страницы
 ?>
@@ -15,12 +16,13 @@ http://blog.sodhanalibrary.com/2014/01/responsive-menu-or-navigation-bar-with.ht
         </div>
         <div class="cab_content">
             <div class="cab_center">
-                <div class="lk-sidebar">
-                    <?php rcl_avatar(200); ?>
-                </div>
+<!--                <div class="lk-sidebar">-->
+<!--                    --><!?php //rcl_avatar(200); ?>
+<!--                </div>-->
                 <div class="cab_title">
                     <h2><?php rcl_username(); ?></h2>
-                    <div class="rcl-action"><?php rcl_action(); ?></div>
+<!--                    <div class="rcl-action">--><?php //rcl_action(); ?><!--</div>-->
+                    <a href="<?php echo $home_url; ?>/account/?user=<?php echo $user->ID;?>&tab=postform" class="create-post">Сделать заявку на участие в олимпиаде</a>
                 </div>
             </div>
 

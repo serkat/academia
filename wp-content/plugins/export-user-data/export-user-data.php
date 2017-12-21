@@ -716,7 +716,7 @@ if ( ! class_exists( 'Q_Export_User_Data' ) )
                     // to csv ##
                     header( 'Content-Description: File Transfer' );
                     header( 'Content-Disposition: attachment; filename='.$filename.'.csv' );
-                    header( 'Content-Type: text/csv; charset=' . get_option( 'blog_charset' ), true );
+                    header( 'Content-Type: text/csv; charset=windows-1251' );
 
                     // set a csv check flag
                     $is_csv = true;
@@ -728,7 +728,7 @@ if ( ! class_exists( 'Q_Export_User_Data' ) )
                     $pre        = '';
 
                     // how to seperate data ##
-                    $seperator = ','; // comma for csv ##
+                    $seperator = ';'; // comma for csv ##
 
                     // line break ##
                     $breaker = "\n";

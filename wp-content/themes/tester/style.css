@@ -4943,3 +4943,40 @@ span.rcl-checkbox-box {
 .kollektiv > article .itrotext p {
     margin-bottom: 5px;
 }
+.cab_title h2 div {
+    display: inline-block;
+    margin-right: 5px;
+}
+#rcl-office .cab_content{
+    min-height: 0;
+    margin: 0;
+    text-align: center;
+}
+.office-sunshine .cab_title h2 {
+    color: #000;
+    text-shadow: none;
+}
+#rcl-office {
+    background: none;
+    box-shadow: none;
+}
+.office-sunshine #lk-conteyner {
+    background: none;
+}
+.cab_header, .office-sunshine #lk-conteyner::after {
+    display: none;
+}
+.create-post {
+    display: block;
+    padding: 10px 20px;
+    background: blue;
+    width: 206px;
+    margin: 20px auto;
+    color: #fff;
+}
+.page.tester article .entry-header {
+    margin-bottom: 10px;
+}
+.rcl-office #tab-button-postform {
+    display: none;
+}

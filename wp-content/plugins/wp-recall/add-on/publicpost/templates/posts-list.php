@@ -3,41 +3,52 @@
 <table class="publics-table-rcl rcl-form">
 
 	<tr>
-		<td><?php _e('Date','wp-recall'); ?></td>
-		<td><?php _e('Title','wp-recall'); ?></td>
-		<td><?php _e('Status','wp-recall'); ?></td>
-<!--        <td>--><?php //_e('№ заявки','wp-recall'); ?><!--</td>-->
-<!--        <td>--><?php //_e('Статус заявки','wp-recall'); ?><!--</td>-->
-<!--        <td>--><?php //_e('количество участников','wp-recall'); ?><!--</td>-->
-<!--        <td>--><?php //_e('Сумма к оплате','wp-recall'); ?><!--</td>-->
-<!--        <td>--><?php //_e('Статус оплаты','wp-recall'); ?><!--</td>-->
+<!--		<td>--><?php //_e('Date','wp-recall'); ?><!--</td>-->
+<!--		<td>--><?php //_e('Title','wp-recall'); ?><!--</td>-->
+<!--		<td>--><?php //_e('Status','wp-recall'); ?><!--</td>-->
+        <td>№ заявки</td>
+        <td>Статус заявки</td>
+        <td>Количество участников</td>
+        <td>Сумма к оплате</td>
+        <td>Статус оплаты</td>
+        <td colspan="4"></td>
 	</tr>
 
-	<?php foreach($posts as $postdata){ ?>
+	<?php foreach($posts as $postdata){ /*echo '<pre>';var_dump($postdata); echo '</pre>';*/?>
 
-		<?php foreach($postdata as $post){ setup_postdata($post); ?>
 
-			<?php if($post->post_status=='pending') {$status = '<span class="status-pending">'.__('to be approved','wp-recall').'</span>'; }
-			elseif($post->post_status=='trash') $status = '<span class="status-pending">'.__('deleted','wp-recall').'</span>';
-                        elseif($post->post_status=='draft') $status = '<span class="status-draft">'.__('draft','wp-recall').'</span>';
-			else $status = '<span class="status-publish">'.__('published','wp-recall').'</span>'; ?>
+		<?php foreach($postdata as $post){ setup_postdata($post);
+
+			/*echo '<pre>';var_dump($post); echo '</pre>';*/
+			?>
+			<?php if($post->bid_status=='new') {$status = '<span class="status-pending">Новая заявка</span>'; }
+			elseif($post->bid_status=='download') $status = '<span class="status-pending">Скачать материалы</span>';
+            elseif($post->bid_status=='waiting_for_pay') $status = '<span class="status-draft">Ожидает оплаты</span>';
+            elseif($post->bid_status=='paid') $status = '<span class="status-paid">Оплачено</span>';
+			else $status = '<span class="status-closed">Закрыто</span>';
+
+			if ($post->pay_status =='not_paid'){$pay_status = '<span class="paystatus-not_paid">Ожидает оплаты</span>'; }
+			elseif ($post->pay_status =='is_paid'){$pay_status = '<span class="paystatus-is_paid">Заявка оплачена</span>'; }
+			?>
 
 			<tr>
 
-				<td width="50"><?php echo mysql2date('d.m.y', $post->post_date); ?></td>
+                <td width="50"><?php echo $post->ID; ?></td>
+                <td><?php echo $status ?></td>
 
-				<td>
+				<td><?php echo $post->amount_of_participants; ?>
 
-				<?php echo ($post->post_status=='trash')? $post->post_title: '<a target="_blank" href="'.$post->guid.'">'.$post->post_title.'</a>'; ?>
-
-				<?php if(function_exists('rcl_format_rating')) {
-					$rtng = (isset($ratings[$post->ID]))? $ratings[$post->ID]: 0;
-					echo rcl_rating_block(array('value'=>$rtng));
-				} ?>
-				<?php $content = ''; echo apply_filters('content_postslist',$content); ?>
+				<!--?php echo ($post->post_status=='trash')? $post->post_title: '<a target="_blank" href="'.$post->guid.'">'.$post->post_title.'</a>'; ?-->
 
 				</td>
-				<td><?php echo $status ?></td>
+                <td><?php echo $post->pay_summ; ?></td>
+                <td><?php echo $pay_status; ?></td>
+
+                <!--td><!?php echo mysql2date('d.m.y', $post->post_date); ?></td-->
+                <td><a href="#">Открыть/ Изменить</a></td>
+                <td><a href="#">Скачать материалы</a></td>
+                <td><a href="#">Оплатить</a></td>
+                <td><a href="#">Загрузить анкеты</a></td>
 
 			</tr>
 		<?php } ?>

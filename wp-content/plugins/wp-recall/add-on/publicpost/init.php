@@ -61,7 +61,7 @@ function rcl_init_publics_block(){
 
         $tab_data = array(
             'id'=>'publics', 
-            'name'=>__('Posts','wp-recall'),
+            'name'=>'Заявки',
             'supports'=>array('ajax','cache'),
             'public'=>rcl_get_option('view_publics_block_rcl'),
             'icon'=>'fa-list',
@@ -85,7 +85,7 @@ function rcl_init_publics_block(){
         rcl_tab(
             array(
                 'id'=>'postform',
-                'name'=>__('Publication','wp-recall'),
+                'name'=>'Сделать заявку на участие в олимпиаде',
                 'public'=>0,
                 'icon'=>'fa-pencil',
                 'content'=>array(
