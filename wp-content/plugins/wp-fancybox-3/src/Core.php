@@ -62,7 +62,7 @@ class Core
         add_action('admin_init', array($this, 'registerOptions'));
         add_filter('plugin_action_links_' . static::$plugin_basename, array($this, 'addSettingsLink'));
         add_action('plugins_loaded', function () {
-            load_plugin_textdomain(static::$key, false, static::$plugin_dir . '/languages/');
+            //load_plugin_textdomain(static::$key, false, static::$plugin_dir . '/languages/');
         });
     }
 
