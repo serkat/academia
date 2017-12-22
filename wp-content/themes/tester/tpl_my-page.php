@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Мой шаблон страницы
+Template Name: Страница оплаты
 */
 get_header(); ?>
     <style>
