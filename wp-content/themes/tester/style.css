@@ -1165,7 +1165,10 @@ thead th {
     border-bottom: 2px solid #bbb;
     padding-bottom: 0.5em;
 }
-
+.theader, .tfooter {
+    background: #00a8ec;
+    color: #fff;
+}
 th {
     padding: 0.4em;
     text-align: left;

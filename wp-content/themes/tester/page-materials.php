@@ -72,17 +72,25 @@ get_header(); ?>
 				/*
 				 * Include the Post-Format-specific template for the content.
 				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 
+				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.*
+			 
 				get_template_part( 'template-parts/post/content', get_post_format() );
-*/?>
+	*/
+                    ?>
                             <article class="material">
                                 <div class="text">
-                                    <?php echo the_field( "предмет" );?>
-                                    <?php echo the_field( "класс" );?>
+                                    <?php echo get_field('cust_class');?>
+                                    <?php 
+                                    $sub_title=get_field('cust_subject');
+                                    //echo $sub_title[post_title];
+                                    echo " $sub_title->post_title" ;
+                                    
+                                    $sub_sessia=get_field('cust_sessia');
+                                    echo  " $sub_sessia->post_title";
+                                    ?>
                                 </div>
                                 <div class="link">
-                                    <a href="<?php echo the_field( 'прикрепить_материал' );?>" class="btn btn-primary" download><i class="fa fa-file-text" aria-hidden="true"></i>&nbsp;&nbsp; Скачать</a>
+                                    <a href="<?php echo the_field( 'cust_add_material' );?>" class="btn btn-primary" download><i class="fa fa-file-text" aria-hidden="true"></i>&nbsp;&nbsp; Скачать</a>
                             
                                 </div>
                             </article>
