@@ -611,10 +611,10 @@ function create_title_test_results_save_post( $post_id ) {
         'post_status'  => 'draft' ,
         'post_title'  => 'А может быть $_POST переменны' ,
         'post_type'  => 'test_results' ,
-    );  
+    );
 
     // insert the post
-    $post_id = wp_insert_post( $post ); 
+    $post_id = wp_insert_post( $post );
 
     // return the new ID
     return $post_id;
@@ -622,3 +622,106 @@ function create_title_test_results_save_post( $post_id ) {
 }
 
 add_filter('acf/pre_save_post' , 'create_title_test_results_save_post', 10, 1 );
+
+//function create_title_kurators_save_post( $post_ids ) {
+//
+//    // check if this is to be a new post
+//    if( $post_ids != 'new_post' ) {
+//
+//        return $post_id;
+//
+//    }
+//
+//    // Create a new post
+//    $post = array(
+////        'post_status'  => 'draft' ,
+//        'post_title'  => 'А может быть $_POST переменны' ,
+//        'post_type'  => 'kurators' ,
+//    );
+//
+//    // insert the post
+//    $post_ids = wp_insert_post( $post );
+//
+//    // return the new ID
+//    return $post_ids;
+//
+//}
+//
+//add_filter('acf/pre_save_post' , 'create_title_kurators_save_post', 10, 1 );
+
+function my_acf_prepare_field( $field ) {
+	global $wpdb;
+	$wpdb->sessii = "{$wpdb->prefix}sessii";
+	$sessii = $wpdb->get_results("SELECT uniq_number FROM $wpdb->sessii WHERE state=1");
+	$sessii_id = $sessii[0]->uniq_number;
+	var_dump($sessii_id);
+	if( $field['value'] ) {
+
+		$field['disabled'] = true;
+
+	}
+
+	return $field;
+
+}
+
+
+// all
+// add_filter('acf/prepare_field', 'my_acf_prepare_field');
+
+// type
+// add_filter('acf/prepare_field/type=text', 'my_acf_prepare_field');
+
+// key
+// add_filter('acf/prepare_field/key=field_508a263b40457', 'my_acf_prepare_field');
+
+// name
+add_filter('acf/prepare_field/name=hidden_field', 'my_acf_prepare_field');
+
+
+function bid_title_acf_prepare_field( $field ) {
+	$field['value'] = "some title";
+	var_dump($field['value']);
+	return $field;
+
+}
+
+add_filter('acf/prepare_field/name=bid_title', 'bid_title_acf_prepare_field');
+
+function who_add_kurator_acf_prepare_field( $field ) {
+	$cur_user_id = get_current_user_id();
+	echo $cur_user_id;
+	$field['value']=$cur_user_id;
+    return $field;
+
+}
+
+add_filter('acf/prepare_field/name=who_add', 'who_add_kurator_acf_prepare_field');
+
+//Auto add and update Title field:
+//function my_post_title_updater( $post_id ) {
+//
+//	$my_post = array();
+//	$my_post['ID'] = $post_id;
+//
+//	$name           = get_field('kur_firstname');
+//	$lastname         = get_field('kur_lastname');
+//	$middlename         = get_field('kur_middlename');
+//
+//	$my_post['post_title'] = $lastname . ' ' .$name . ' ' . $middlename;
+//	var_dump($my_post['post_title']);
+//	if ( get_post_type() == 'kurators' ) {
+//		$my_post['post_title'] = $lastname . ' ' .$name . ' ' . $middlename;
+//	} /*elseif ( get_post_type() == 'products' ) {
+//		$my_post['post_title'] = get_field('kitName') . ' (' . get_field('manufacturer_name', $manufacturer->ID) . ' ' . get_field('kitNumber') . ')';
+//	} elseif ( get_post_type() == 'reviews' ) {
+//		$my_post['post_title'] = get_field('kitName', $review_target_product) . ' (' . get_field('manufacturer_name', $manufacturer_target) . ' ' . get_field('kitNumber', $review_target_product) . ')';
+//	}*/
+//
+//	// Update the post into the database
+//	wp_update_post( $my_post );
+//
+//}
+//
+//// run after ACF saves the $_POST['fields'] data
+//add_action('acf/save_post', 'my_post_title_updater', 20);

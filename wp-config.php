@@ -21,7 +21,7 @@
 // ** Параметры MySQL: Эту информацию можно получить у вашего хостинг-провайдера ** //
 define('FS_METHOD', 'direct');
 /** Имя базы данных для WordPress */
-define('DB_NAME', 'academia');
+define('DB_NAME', 'qweqwe');
 
 /** Имя пользователя MySQL */
 define('DB_USER', 'mysql');

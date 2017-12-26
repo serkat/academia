@@ -3,9 +3,6 @@
 <table class="publics-table-rcl rcl-form">
 
 	<tr>
-<!--		<td>--><?php //_e('Date','wp-recall'); ?><!--</td>-->
-<!--		<td>--><?php //_e('Title','wp-recall'); ?><!--</td>-->
-<!--		<td>--><?php //_e('Status','wp-recall'); ?><!--</td>-->
         <td>№ заявки</td>
         <td>Статус заявки</td>
         <td>Количество участников</td>
@@ -21,10 +18,10 @@
 
 			/*echo '<pre>';var_dump($post); echo '</pre>';*/
 			?>
-			<?php if($post->bid_status=='new') {$status = '<span class="status-pending">Новая заявка</span>'; }
-			elseif($post->bid_status=='download') $status = '<span class="status-pending">Скачать материалы</span>';
-            elseif($post->bid_status=='waiting_for_pay') $status = '<span class="status-draft">Ожидает оплаты</span>';
-            elseif($post->bid_status=='paid') $status = '<span class="status-paid">Оплачено</span>';
+			<?php if($post->post_status=='new') {$status = '<span class="status-pending">Новая заявка</span>'; }
+			elseif($post->post_status=='download') $status = '<span class="status-pending">Скачать материалы</span>';
+            elseif($post->post_status=='waiting_for_pay') $status = '<span class="status-draft">Ожидает оплаты</span>';
+            elseif($post->post_status=='paid') $status = '<span class="status-paid">Оплачено</span>';
 			else $status = '<span class="status-closed">Закрыто</span>';
 
 			if ($post->pay_status =='not_paid'){$pay_status = '<span class="paystatus-not_paid">Ожидает оплаты</span>'; }
@@ -45,7 +42,7 @@
                 <td><?php echo $pay_status; ?></td>
 
                 <!--td><!?php echo mysql2date('d.m.y', $post->post_date); ?></td-->
-                <td><a href="#">Открыть/ Изменить</a></td>
+                <td><a href="<?php echo ($home_url.'/qwe/redaktirovanie-zayavki/?pid='.$post->ID); ?>">Открыть/ Изменить</a></td>
                 <td><a href="#">Скачать материалы</a></td>
                 <td><a href="#">Оплатить</a></td>
                 <td><a href="#">Загрузить анкеты</a></td>

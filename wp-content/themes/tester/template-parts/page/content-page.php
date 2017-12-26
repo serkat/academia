@@ -14,8 +14,8 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-
-		<?php
+		<?php// the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		<? 
 		$title=get_field('title_page');
 		
 		if (!empty($title)){ echo '<h3 class="recents-title">'.$title.'</h3>';}

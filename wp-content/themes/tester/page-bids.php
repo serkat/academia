@@ -28,22 +28,20 @@ get_header(); ?>
             <main id="main" class="site-main" role="main">
 
 				<?php
-				while ( have_posts() ) : the_post();
+				while ( have_posts() ) : the_post(); ?>
 
-					//get_template_part( 'template-parts/page/content', 'page' );
-
-
+					<?php
 					$options = array(
                         'id_bid' => '9999',
 						'post_id'		=> 'new_post',
 						'new_post'		=> array(
 							'post_type'		=> 'bids',
-							'post_status'		=> 'publish'),
+							'post_status'		=> 'new'),
 						'post_title'	=> false,
 						'post_content'	=> false,
 						'field_groups'  => array(235),
 //						'fields'        => array(316),
-						'submit_value'       => ' ДОБАВИТЬ ЗАПИСЬ',
+						'submit_value'       => 'Создать заявку',
 						'label_placement' => 'left',
 						'updated_message' => 'Ваша запись поставлена в очередь на модерацию',
                         'return' => $home_url.'/account/?user='.$cur_user_id,

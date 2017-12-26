@@ -1,0 +1,696 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7a1fb01d-d8cf-43a7-b660-b9ebc405de85" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/tester/page-edit-bids.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/tester/page-edit-kurators.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/tester/page-kurators.php" />
+      <change beforePath="$PROJECT_DIR$/.htaccess" afterPath="$PROJECT_DIR$/.htaccess" />
+      <change beforePath="$PROJECT_DIR$/wp-config.php" afterPath="$PROJECT_DIR$/wp-config.php" />
+      <change beforePath="$PROJECT_DIR$/wp-content/languages/ru_RU.mo" afterPath="$PROJECT_DIR$/wp-content/languages/ru_RU.mo" />
+      <change beforePath="$PROJECT_DIR$/wp-content/languages/ru_RU.po" afterPath="$PROJECT_DIR$/wp-content/languages/ru_RU.po" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/acf.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/core/actions/export.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/core/api.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/core/controllers/addons.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/core/controllers/everything_fields.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/core/controllers/export.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/core/controllers/field_group.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/core/controllers/field_groups.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/core/controllers/input.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/core/controllers/location.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/core/controllers/post.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/core/controllers/revisions.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/core/controllers/third_party.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/core/controllers/upgrade.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/core/early-access.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/core/fields/_base.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/core/fields/_functions.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/core/fields/checkbox.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/core/fields/color_picker.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/core/fields/date_picker/date_picker.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/core/fields/date_picker/images/ui-bg_flat_0_aaaaaa_40x100.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/core/fields/date_picker/images/ui-bg_flat_55_5bc6f5_40x100.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/core/fields/date_picker/images/ui-bg_flat_75_ffffff_40x100.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/core/fields/date_picker/images/ui-bg_glass_65_ffffff_1x400.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/core/fields/date_picker/images/ui-bg_glass_75_dadada_1x400.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/core/fields/date_picker/images/ui-bg_glass_75_e6e6e6_1x400.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/core/fields/date_picker/images/ui-bg_glass_95_fef1ec_1x400.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/core/fields/date_picker/images/ui-bg_highlight-soft_0_444444_1x100.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/core/fields/date_picker/images/ui-icons_222222_256x240.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/core/fields/date_picker/images/ui-icons_2e83ff_256x240.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/core/fields/date_picker/images/ui-icons_454545_256x240.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/core/fields/date_picker/images/ui-icons_888888_256x240.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/core/fields/date_picker/images/ui-icons_cd0a0a_256x240.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/core/fields/date_picker/jquery.ui.datepicker.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/core/fields/date_picker/style.date_picker.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/core/fields/dummy.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/core/fields/email.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/core/fields/file.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/core/fields/google-map.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/core/fields/image.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/core/fields/message.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/core/fields/number.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/core/fields/page_link.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/core/fields/password.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/core/fields/post_object.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/core/fields/radio.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/core/fields/relationship.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/core/fields/select.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/core/fields/tab.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/core/fields/taxonomy.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/core/fields/text.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/core/fields/textarea.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/core/fields/true_false.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/core/fields/user.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/core/fields/wysiwyg.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/core/views/meta_box_fields.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/core/views/meta_box_location.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/core/views/meta_box_options.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/css/acf.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/css/field-group.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/css/global.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/css/input.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/images/add-ons/cf7-field-thumb.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/images/add-ons/date-time-field-thumb.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/images/add-ons/flexible-content-field-thumb.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/images/add-ons/gallery-field-thumb.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/images/add-ons/google-maps-field-thumb.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/images/add-ons/gravity-forms-field-thumb.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/images/add-ons/options-page-thumb.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/images/add-ons/repeater-field-thumb.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/images/arrows.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/images/arrows@2x.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/images/sprite.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/images/sprite@2x.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/images/wpspin_light.gif" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/images/wpspin_light@2x.gif" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/js/field-group.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/js/field-group.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/js/input.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/js/input.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/js/tinymce.code.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/lang/acf-bg_BG.mo" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/lang/acf-bg_BG.po" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/lang/acf-cs_CZ.mo" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/lang/acf-cs_CZ.po" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/lang/acf-cy_GB.mo" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/lang/acf-cy_GB.po" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/lang/acf-de_DE.mo" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/lang/acf-de_DE.po" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/lang/acf-es_ES.mo" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/lang/acf-es_ES.po" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/lang/acf-fa_IR.mo" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/lang/acf-fa_IR.po" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/lang/acf-fi_FI.mo" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/lang/acf-fi_FI.po" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/lang/acf-fr_FR.mo" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/lang/acf-fr_FR.po" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/lang/acf-he_IL.mo" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/lang/acf-he_IL.po" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/lang/acf-id_ID.mo" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/lang/acf-id_ID.po" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/lang/acf-it_IT.mo" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/lang/acf-it_IT.po" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/lang/acf-ja.mo" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/lang/acf-ja.po" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/lang/acf-nl_NL.mo" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/lang/acf-nl_NL.po" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/lang/acf-pl_PL.mo" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/lang/acf-pl_PL.po" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/lang/acf-pt_BR.mo" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/lang/acf-pt_BR.po" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/lang/acf-pt_PT.mo" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/lang/acf-pt_PT.po" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/lang/acf-ro_RO.mo" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/lang/acf-ro_RO.po" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/lang/acf-ru_RU.mo" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/lang/acf-ru_RU.po" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/lang/acf-sk_SK.mo" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/lang/acf-sk_SK.po" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/lang/acf-sr_RS.mo" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/lang/acf-sr_RS.po" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/lang/acf-sv_SE.mo" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/lang/acf-sv_SE.po" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/lang/acf-tr_TR.mo" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/lang/acf-tr_TR.po" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/lang/acf-uk.mo" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/lang/acf-uk.po" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/lang/acf-zh_CN.mo" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/lang/acf-zh_CN.po" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/lang/acf.pot" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields/readme.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/wp-fancybox-3/src/Core.php" afterPath="$PROJECT_DIR$/wp-content/plugins/wp-fancybox-3/src/Core.php" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/wp-recall/add-on/publicpost/templates/posts-list.php" afterPath="$PROJECT_DIR$/wp-content/plugins/wp-recall/add-on/publicpost/templates/posts-list.php" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/wp-recall/add-on/theme-sunshine/templates/office.php" afterPath="$PROJECT_DIR$/wp-content/plugins/wp-recall/add-on/theme-sunshine/templates/office.php" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/tester/functions.php" afterPath="$PROJECT_DIR$/wp-content/themes/tester/functions.php" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/tester/page-bids.php" afterPath="$PROJECT_DIR$/wp-content/themes/tester/page-bids.php" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/tester/template-parts/footer/footer-widgets.php" afterPath="$PROJECT_DIR$/wp-content/themes/tester/template-parts/footer/footer-widgets.php" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/tester/template-parts/page/content-page.php" afterPath="$PROJECT_DIR$/wp-content/themes/tester/template-parts/page/content-page.php" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="wp-settings.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wp-settings.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-5085">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="office.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wp-content/plugins/wp-recall/add-on/theme-sunshine/templates/office.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="25" column="102" lean-forward="false" selection-start-line="25" selection-start-column="102" selection-end-line="25" selection-end-column="102" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="posts-list.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wp-content/plugins/wp-recall/add-on/publicpost/templates/posts-list.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="23" column="30" lean-forward="false" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="page-bids.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wp-content/themes/tester/page-bids.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="20" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="functions.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wp-content/themes/tester/functions.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-190">
+              <caret line="625" column="0" lean-forward="false" selection-start-line="625" selection-start-column="2" selection-end-line="649" selection-end-column="78" />
+              <folding>
+                <marker date="1514247840015" expanded="true" signature="19011:19104" ph="SELECT name,... ${$wpdb-&gt;sessii}" />
+                <marker date="1514247840015" expanded="true" signature="20423:20447" ph="SELECT uniq_... ${$wpdb-&gt;sessii}" />
+                <marker date="1514247840015" expanded="true" signature="20423:20474" ph="SELECT uniq_... ${$wpdb-&gt;sessii}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="page-kurators.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/wp-content/themes/tester/page-kurators.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="38" column="58" lean-forward="true" selection-start-line="38" selection-start-column="58" selection-end-line="38" selection-end-column="58" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="page-materials.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wp-content/themes/tester/page-materials.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-429">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="page-input_results.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wp-content/themes/tester/page-input_results.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2559">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="page-edit-kurators.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wp-content/themes/tester/page-edit-kurators.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="16" column="45" lean-forward="false" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="page-edit-bids.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wp-content/themes/tester/page-edit-bids.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="46" column="72" lean-forward="false" selection-start-line="46" selection-start-column="72" selection-end-line="46" selection-end-column="72" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>academ</find>
+      <find>acf_form()</find>
+      <find>function acf_form()</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/.htaccess" />
+        <option value="$PROJECT_DIR$/wp-config.php" />
+        <option value="$PROJECT_DIR$/wp-content/themes/tester/page-edit-bids.php" />
+        <option value="$PROJECT_DIR$/wp-content/plugins/wp-recall/add-on/publicpost/templates/posts-list.php" />
+        <option value="$PROJECT_DIR$/wp-content/plugins/wp-recall/add-on/publicpost/index.php" />
+        <option value="$PROJECT_DIR$/wp-content/themes/tester/page-bids.php" />
+        <option value="$PROJECT_DIR$/wp-content/themes/tester/page-edit-kurators.php" />
+        <option value="$PROJECT_DIR$/wp-content/plugins/wp-recall/add-on/theme-sunshine/templates/office.php" />
+        <option value="$PROJECT_DIR$/wp-content/themes/tester/functions.php" />
+        <option value="$PROJECT_DIR$/wp-content/themes/tester/page-kurators.php" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="161" />
+    <option name="y" value="44" />
+    <option name="width" value="1439" />
+    <option name="height" value="824" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="qwe" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qwe" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="qwe" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qwe" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="wp-content" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="qwe" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qwe" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="wp-content" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="plugins" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="qwe" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qwe" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="wp-content" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="plugins" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="advanced-custom-fields-pro" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="qwe" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qwe" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="wp-content" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="plugins" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="advanced-custom-fields-pro" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="forms" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="qwe" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qwe" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="wp-content" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="plugins" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="advanced-custom-fields-pro" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="pro" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="qwe" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qwe" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="wp-content" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="plugins" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="advanced-custom-fields-pro" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="pro" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="api" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="qwe" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qwe" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="wp-content" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="plugins" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="advanced-custom-fields-pro" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="pro" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="core" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="qwe" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qwe" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="wp-content" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="plugins" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="wp-recall" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="qwe" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qwe" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="wp-content" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="plugins" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="wp-recall" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="add-on" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="qwe" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qwe" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="wp-content" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="plugins" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="wp-recall" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="add-on" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="publicpost" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="qwe" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qwe" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="wp-content" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="plugins" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="wp-recall" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="add-on" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="publicpost" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="templates" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="qwe" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qwe" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="wp-content" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="plugins" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="wp-recall" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="add-on" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="theme-sunshine" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="qwe" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qwe" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="wp-content" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="plugins" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="wp-recall" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="classes" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="qwe" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qwe" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="wp-content" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="themes" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="qwe" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qwe" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="wp-content" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="themes" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="tester" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/wp-content/themes/tester" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7a1fb01d-d8cf-43a7-b660-b9ebc405de85" name="Default" comment="" />
+      <created>1514234792197</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1514234792197</updated>
+      <workItem from="1514234793664" duration="12491000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="12491000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="161" y="44" width="1439" height="824" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24946082" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/.htaccess">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="18" lean-forward="false" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
+          <folding>
+            <marker date="1514234829128" expanded="true" signature="19:226" ph="&lt;IfModule mod_rewrite.c&gt;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="23" column="25" lean-forward="false" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-settings.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5085">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/wp-recall/add-on/add-results/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="524">
+          <caret line="40" column="16" lean-forward="false" selection-start-line="40" selection-start-column="16" selection-end-line="40" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields-pro/pro/api/api-options-page.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1530">
+          <caret line="107" column="40" lean-forward="true" selection-start-line="107" selection-start-column="40" selection-end-line="107" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields-pro/forms/post.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2970">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields-pro/api/api-field.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3795">
+          <caret line="73" column="33" lean-forward="true" selection-start-line="73" selection-start-column="33" selection-end-line="73" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/plugins/advanced-custom-fields-pro/api/api-template.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8144">
+          <caret line="1546" column="15" lean-forward="true" selection-start-line="1546" selection-start-column="15" selection-end-line="1546" selection-end-column="15" />
+          <folding>
+            <marker date="1514232793000" expanded="true" signature="5791:5892" ph="SELECT optio... ${$wpdb-&gt;options}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/plugins/wp-recall/add-on/publicpost/info.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/plugins/wp-recall/add-on/publicpost/init.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-985">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/tester/page-edit-bids.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="46" column="72" lean-forward="false" selection-start-line="46" selection-start-column="72" selection-end-line="46" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/plugins/wp-recall/add-on/publicpost/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2595">
+          <caret line="144" column="44" lean-forward="true" selection-start-line="144" selection-start-column="44" selection-end-line="144" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/tester/page-edit-kurators.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="45" lean-forward="false" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/plugins/wp-recall/add-on/publicpost/templates/posts-list.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="30" lean-forward="false" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/plugins/wp-recall/add-on/theme-sunshine/templates/office.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="102" lean-forward="false" selection-start-line="25" selection-start-column="102" selection-end-line="25" selection-end-column="102" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/tester/page-bids.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="20" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/tester/functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-190">
+          <caret line="625" column="0" lean-forward="false" selection-start-line="625" selection-start-column="2" selection-end-line="649" selection-end-column="78" />
+          <folding>
+            <marker date="1514247840015" expanded="true" signature="19011:19104" ph="SELECT name,... ${$wpdb-&gt;sessii}" />
+            <marker date="1514247840015" expanded="true" signature="20423:20447" ph="SELECT uniq_... ${$wpdb-&gt;sessii}" />
+            <marker date="1514247840015" expanded="true" signature="20423:20474" ph="SELECT uniq_... ${$wpdb-&gt;sessii}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/tester/page-materials.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-429">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/tester/page-input_results.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2559">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/tester/page-kurators.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="38" column="58" lean-forward="true" selection-start-line="38" selection-start-column="58" selection-end-line="38" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
