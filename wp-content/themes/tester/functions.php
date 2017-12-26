@@ -597,19 +597,29 @@ function getSessii( ) {
     
 }
 
-function create_title_test_results_save_post( $post_id ) {
+function getTest( ) {
+    $testtin = "Привет я тестовая фунция";
+    return $testtin;
+    
+}
+
+add_action('acf/save_post', 'my_save_post');
+
+function my_pre_save_post( $post_id ) {
 
     // check if this is to be a new post
-    if( $post_id != 'new_post' ) {
+    if( $post_id != 'new' ) {
 
         return $post_id;
 
     }
 
     // Create a new post
+
+  $nw_title = $_POST[acf][field_5a3d11b912cb0]." ".$_POST[acf][field_5a3d11f912cb1]." ".$_POST[acf][field_5a40d0d4bd545]." ".get_the_title($_POST[acf][field_5a4213ecb8c5e])." ".get_the_title($_POST[acf][field_5a3d2898227f8]);
     $post = array(
         'post_status'  => 'draft' ,
-        'post_title'  => 'А может быть $_POST переменны' ,
+        'post_title'  => $nw_title ,
         'post_type'  => 'test_results' ,
     );  
 
@@ -621,4 +631,42 @@ function create_title_test_results_save_post( $post_id ) {
 
 }
 
-add_filter('acf/pre_save_post' , 'create_title_test_results_save_post', 10, 1 );
+add_filter('acf/pre_save_post' , 'my_pre_save_post', 10, 1 );
+
+
+
+$klass = $_GET['klass'];
+add_filter('acf/load_field/name=klass',
+     function($field) use ($klass) {           
+	     $field['default_value'] = $klass;
+	     return $field;
+     }
+);
+$sid = $_GET['sid'];
+add_filter('acf/load_field/name=sessia',
+     function($field) use ($sid) {           
+	     $field['default_value'] = $sid;
+	     return $field;
+     }
+);
+$curid = $_GET['curid'];
+add_filter('acf/load_field/name=curator',
+     function($field) use ($curid) {           
+	     $field['default_value'] = $curid;
+	     return $field;
+     }
+);
+$bidid = $_GET['bidid'];
+add_filter('acf/load_field/name=number_bids',
+     function($field) use ($bidid) {           
+	     $field['default_value'] = $bidid;
+	     return $field;
+     }
+);
+$subid = $_GET['subid'];
+add_filter('acf/load_field/name=predmet2',
+     function($field) use ($subid) {           
+	     $field['default_value'] = $subid;
+	     return $field;
+     }
+);

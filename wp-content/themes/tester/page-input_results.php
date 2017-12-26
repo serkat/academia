@@ -89,13 +89,23 @@ if ( is_user_logged_in() ) {  ?>
                         <th>Х</th>
                     </tr>
                     <?php
+    $args = array(
+
+);
                         $args = array(
                         'post_type' => 'test_results',
                         'publish' => true,
                         'posts_per_page' => 8,
                         'paged' => get_query_var('paged'),
                         'post_status' => 'any',
-                        'author'=> $cur_user_id
+                        'author'=> $cur_user_id,
+                        'meta_query' => array(
+                            'relation' => 'OR',
+                            array(
+                                'key' => 'predmet2',
+                                'value' => '247'
+                            )
+                        )
                         );
 
                             query_posts($args);?>
@@ -111,9 +121,13 @@ if ( is_user_logged_in() ) {  ?>
                                 </td>
                                 <td>
                                     <?php 
-                                    //print_r(get_field('предмет'));
-                                    $sub_title=get_field('предмет');
-                                    echo $sub_title['cust_subject']->post_title ;
+                                    
+                                    //print_r(get_field('predmet2'));
+                                    //$premet_title = get_field('predmet2') ;                        
+                                    $premet_title = get_the_title(get_field('predmet2')) ;                        
+                                    echo $premet_title;
+                                    //print_r($sub_title=get_post_meta(get_field('predmet2'),'post_title'));
+                                    // $sub_title['cust_subject']->post_title ;
                                     ?>
                                 </td>
                                 <td>
