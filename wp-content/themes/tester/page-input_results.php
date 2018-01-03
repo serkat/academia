@@ -18,24 +18,97 @@ acf_form_head();
 $cur_user_id = get_current_user_id();
 //echo $cur_user_id;
 $home_url = home_url();
+$r_param = 'sid='.$sid.'&curid='.$curid.'&bidid='.$bidid.'&subid='.$subid.'&klass='.$klass;
 $title=get_field('title_page');
+
 get_header(); ?>
     <style>
         .mtop_60 {
             margin-top: 60px;
         }
 
+        .input-row {
+            display: flex;
+            justify-content: center;
+        }
+
+        .label {
+            flex: 2;
+            text-align: right;
+        }
+
+        .info {
+            flex: 1;
+        }
+
+        .input-info {
+            margin: 30px 0;
+        }
+
+
+        .hidden_front{
+            display: none;
+        }
     </style>
     <?php
 if ( is_user_logged_in() ) {  ?>
         <div class="wrap">
             <div id="primary" class="content-area">
                 <main id="main" class="site-main" role="main">
-
-                    <?php
+                    <div class="alert alert-warning" role="alert">
+                        Убедитесь в верности данных ! Если данные не верны перейдите заного по ссылке "Загрузить".
+                    </div>
+                    <?            if (!empty($title)){ echo '<h3 class="recents-title">'.$title.'</h3>';}
+?>
+                        <div class="row">
+                            <div class="col-sm-8">
+                                <div class="input-info">
+                                    <div class="input-row">
+                                        <div class="label">Заявка:&nbsp;</div>
+                                        <div class="info">
+                                            <?=get_the_title($bidid);?>
+                                        </div>
+                                    </div>
+                                    <div class="input-row">
+                                        <div class="label">Куратор:&nbsp;</div>
+                                        <div class="info">
+                                            <?=get_the_title($curid);?>
+                                        </div>
+                                    </div>
+                                    <div class="input-row">
+                                        <div class="label">Класс:&nbsp;</div>
+                                        <div class="info">
+                                            <?=$klass." Класс";?>
+                                        </div>
+                                    </div>
+                                    <div class="input-row">
+                                        <div class="label">Предмет:&nbsp;</div>
+                                        <div class="info">
+                                            <?=get_the_title($subid);?>
+                                        </div>
+                                    </div>
+                                    <div class="input-row">
+                                        <div class="label">Сессия:&nbsp;</div>
+                                        <div class="info">
+                                            <?=get_the_title($sid);?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        оплачено<br> 20
+                                    </div>
+                                    <div class="col-sm-6">
+                                        Введено<br> 20
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <?php
 			while ( have_posts() ) : the_post(); 
             
-            if (!empty($title)){ echo '<h3 class="recents-title">'.$title.'</h3>';}
 
                 if (empty($_GET['edit'])){
                     get_template_part( 'template-parts/page/results', 'add-new' ); 
@@ -102,8 +175,8 @@ if ( is_user_logged_in() ) {  ?>
                         'meta_query' => array(
                             'relation' => 'OR',
                             array(
-                                'key' => 'predmet2',
-                                'value' => '247'
+                                'key' => 'curator',
+                                'value' => $curid
                             )
                         )
                         );
@@ -114,7 +187,7 @@ if ( is_user_logged_in() ) {  ?>
 
                             <tr>
                                 <td>
-                                    <a href="/input_results/?edit=<?php the_ID(); ?>">
+                                    <a href="/input_results/?edit=<?php the_ID();?>&<?=$r_param?>">
                                         <?php echo get_field('s_name_student');?>
                                         <?php echo get_field('f_name_student');?>
                                     </a>
@@ -131,7 +204,7 @@ if ( is_user_logged_in() ) {  ?>
                                     ?>
                                 </td>
                                 <td>
-                                    <?php echo get_field('класс');?>
+                                    <?php echo get_field('klass')." Класс";?>
                                 </td>
                                 <td>
                                     <?php echo get_field('A1');?>

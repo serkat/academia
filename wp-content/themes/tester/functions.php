@@ -606,32 +606,69 @@ function getTest( ) {
 add_action('acf/save_post', 'my_save_post');
 
 function my_pre_save_post( $post_id ) {
+	$cur_user_id = get_current_user_id();
+	//var_dump($cur_user_id);
+	//var_dump($post_id);
+	$input_post_type = $post_id;
+    // check if this is to be a new post and create new title
+	if( $post_id == 'kurator' ) {
+		$nw_title = $_POST[acf][field_5a4189ab2aa12]." ".$_POST[acf][field_5a4188eb2aa11]." ".$_POST[acf][field_5a4189fb2aa13];
 
-    // check if this is to be a new post
-    if( $post_id != 'new' ) {
+		$post = array(
+			'post_status'  => 'publish' ,
+			'post_title'  => $nw_title ,
+			'post_type'  => 'kurators' ,
+		);
 
-        return $post_id;
-
+	} elseif ($post_id == 'new_test') {
+		$nw_title = $_POST[acf][field_5a3d11b912cb0]." ".$_POST[acf][field_5a3d11f912cb1]." ".$_POST[acf][field_5a40d0d4bd545]." Класс ".get_the_title($_POST[acf][field_5a4213ecb8c5e])." ".get_the_title($_POST[acf][field_5a3d2898227f8]);
+		$post = array(
+			'post_status'  => 'draft' ,
+			'post_title'  => $nw_title ,
+			'post_type'  => 'test_results' ,
+		);
+	}  elseif ($post_id == 'bid') {
+		$post = array(
+			'post_status'  => 'publish' ,
+//			'post_title'  => $nw_title ,
+			'post_type'  => 'bids' ,
+		);
+	} elseif( $post_id != 'new_test' ) {
+		return $post_id;
     }
 
-    // Create a new post
-
-  $nw_title = $_POST[acf][field_5a3d11b912cb0]." ".$_POST[acf][field_5a3d11f912cb1]." ".$_POST[acf][field_5a40d0d4bd545]." ".get_the_title($_POST[acf][field_5a4213ecb8c5e])." ".get_the_title($_POST[acf][field_5a3d2898227f8]);
-    $post = array(
-        'post_status'  => 'draft' ,
-        'post_title'  => $nw_title ,
-        'post_type'  => 'test_results' ,
-    );  
-
     // insert the post
-    $post_id = wp_insert_post( $post ); 
+    $post_id = wp_insert_post( $post );
 
+//
+//	// update who create kurator
+	if( $input_post_type == 'bid' ) {
+	    $bid_post = get_post($post_id);
+		$my_post = array();
+		$my_post['ID'] = $post_id;
+		$my_post['post_title'] = "Заявка №".$post_id;
+		wp_update_post( wp_slash($my_post) );
+    // echo '<pre>';
+	// var_dump($post_id);
+	// echo '</pre>';
+	// echo '<pre>';
+	update_post_meta( $post_id, 'bid_id', 'Steve123' );
+	// var_dump($bid_post);die();
+	// echo '</pre>';
+	    }
+
+//		// save a basic text value
+//		$field_key = "field_5a418ac818e72";
+//		$value     = $cur_user_id;
+//		update_field( $field_key, $value, $post_id );
+//	}
     // return the new ID
     return $post_id;
 
 }
 
 add_filter('acf/pre_save_post' , 'my_pre_save_post', 10, 1 );
+
 
 
 
@@ -670,3 +707,92 @@ add_filter('acf/load_field/name=predmet2',
 	     return $field;
      }
 );
+
+/* Дополнительные сортируемые колонки для постов CPT Результаты в админке 
+------------------------------------------------------------------------ */
+// создаем новую колонку
+add_filter('manage_test_results_posts_columns', 'add_sessia_column', 4);
+function add_sessia_column( $columns ){
+	// удаляем колонку Автор
+	//unset($columns['author']);
+	//unset($columns['date']);
+
+	// вставляем в нужное место - 3 - 3-я колонка
+	$out = array();
+	foreach($columns as $col=>$name){
+		if(++$i==3){
+            $out['number_bids'] = 'Номер заявки';
+			$out['sessia'] = 'Сессия';
+			$out['curator'] = 'Куратор';
+			$out['predmet2'] = 'Предмет';
+			$out['klass'] = 'Класс';
+        }
+
+		$out[$col] = $name;
+	}
+
+	return $out;
+}
+// заполняем колонку данными -  wp-admin/includes/class-wp-posts-list-table.php
+add_filter('manage_test_results_posts_custom_column', 'fill_sessia_column', 5, 2);
+function fill_sessia_column( $colname, $post_id ){
+	if( $colname === 'sessia' ){
+        echo get_the_title(get_post_meta($post_id, 'sessia', 1));
+		//echo get_post_meta($post_id, 'sessia', 1);
+	}
+    if( $colname === 'number_bids' ){
+        
+		echo get_the_title(get_post_meta($post_id, 'number_bids', 1));
+		//echo get_post_meta($post_id, 'number_bids', 1);
+	}
+    if( $colname === 'curator' ){
+        
+		echo get_the_title(get_post_meta($post_id, 'curator', 1));
+		//echo get_post_meta($post_id, 'number_bids', 1);
+	}
+    if( $colname === 'predmet2' ){
+        
+		echo get_the_title(get_post_meta($post_id, 'predmet2', 1));
+		//echo get_post_meta($post_id, 'predmet2', 1);
+    }
+    if( $colname === 'klass' ){
+        
+		//echo get_the_title(get_post_meta($post_id, 'klass', 1));
+		echo get_post_meta($post_id, 'klass', 1)." Класс";
+	}
+}
+
+// подправим ширину колонки через css
+add_action('admin_head', 'add_sessia_column_css');
+function add_sessia_column_css(){
+	if( get_current_screen()->base == 'edit')
+		echo '
+        <style type="text/css">.column-sessia{width:10%;}</style>
+        <style type="text/css">.column-number_bids{width:10%;}</style>
+        <style type="text/css">.column-curator{width:10%;}</style>
+        <style type="text/css">.column-predmet2{width:10%;}</style>
+        <style type="text/css">.column-klass{width:10%;}</style>
+        
+        ';
+}
+
+// добавляем возможность сортировать колонку
+add_filter('manage_edit-test_results_sortable_columns', 'add_sessia_sortable_column');
+function add_sessia_sortable_column($sortable_columns){
+	$sortable_columns['sessia'] = 'sessia_sessia';
+	$sortable_columns['number_bids'] = 'number_bids_number_bids';
+	$sortable_columns['curator'] = 'curator_curator';
+	$sortable_columns['predmet2'] = 'predmet2_predmet2';
+
+	return $sortable_columns;
+}
+
+// изменяем запрос при сортировке колонки
+add_filter('pre_get_posts', 'add_column_sessia_request');
+function add_column_sessia_request( $object ){
+	if( $object->get('orderby') != 'sessia_sessia' )
+		return;
+
+	$object->set('meta_key', 'sessia');
+	$object->set('orderby', 'meta_value_num');
+}

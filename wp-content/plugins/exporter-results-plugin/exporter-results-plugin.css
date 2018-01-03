@@ -1,0 +1,22 @@
+/*
+	Шаблон для стилей плагина
+*/
+
+.h1.wp-heading-inline {
+    font-size: 30px;
+    margin: 20px;
+}
+.h2.wp-heading-inline {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 20px 0;
+}
+.btn-block {
+    margin: 20px 0;
+}
+.export-list {
+    background: #fff;
+    width: 100%;
+    overflow: auto;
+    padding: 10px;
+}
