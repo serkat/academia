@@ -22,7 +22,8 @@ $home_url = get_home_url();
                 <div class="cab_title">
                     <h2><?php rcl_username(); ?></h2>
 <!--                    <div class="rcl-action">--><?php //rcl_action(); ?><!--</div>-->
-                    <a href="<?php echo $home_url; ?>/account/?user=<?php echo $user->ID;?>&tab=postform" class="create-post">Сделать заявку на участие в олимпиаде</a>
+                    <a href="<?php echo $home_url; ?>/zayavki/" class="create-post">Сделать заявку на участие в олимпиаде</a>
+                    <a href="<?php echo $home_url; ?>/kuratory/" class="create-post">Добавить куратора</a>
                 </div>
             </div>
 
