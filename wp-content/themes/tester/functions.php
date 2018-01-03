@@ -621,7 +621,7 @@ function my_pre_save_post( $post_id ) {
 		);
 
 	} elseif ($post_id == 'new_test') {
-		$nw_title = $_POST[acf][field_5a3d11b912cb0]." ".$_POST[acf][field_5a3d11f912cb1]." ".$_POST[acf][field_5a40d0d4bd545]." Класс ".get_the_title($_POST[acf][field_5a4213ecb8c5e])." ".get_the_title($_POST[acf][field_5a3d2898227f8]);
+		$nw_title = $_POST[acf][field_5a3d11b912cb0]." ".$_POST[acf][field_5a3d11f912cb1];
 		$post = array(
 			'post_status'  => 'draft' ,
 			'post_title'  => $nw_title ,
@@ -637,7 +637,7 @@ function my_pre_save_post( $post_id ) {
 		return $post_id;
     }
 
-<<<<<<< HEAD
+//<<<<<<< HEAD
     // insert the post
     $post_id = wp_insert_post( $post );
 
@@ -663,7 +663,7 @@ function my_pre_save_post( $post_id ) {
 //		$value     = $cur_user_id;
 //		update_field( $field_key, $value, $post_id );
 //	}
-=======
+//=======
     // Create a new post
     $post = array(
         'post_status'  => 'draft' ,
@@ -674,13 +674,13 @@ function my_pre_save_post( $post_id ) {
     // insert the post
     $post_id = wp_insert_post( $post );
 
->>>>>>> 8f22222a1e41bfd846baa0dccc36be3835a3b428
+//>>>>>>> 8f22222a1e41bfd846baa0dccc36be3835a3b428
     // return the new ID
     return $post_id;
 
 }
 
-<<<<<<< HEAD
+//<<<<<<< HEAD
 add_filter('acf/pre_save_post' , 'my_pre_save_post', 10, 1 );
 
 
@@ -810,7 +810,10 @@ function add_column_sessia_request( $object ){
 	$object->set('meta_key', 'sessia');
 	$object->set('orderby', 'meta_value_num');
 }
-=======
+
+
+
+//=======
 add_filter('acf/pre_save_post' , 'create_title_test_results_save_post', 10, 1 );
 
 //function create_title_kurators_save_post( $post_ids ) {
@@ -915,4 +918,4 @@ add_filter('acf/prepare_field/name=who_add', 'who_add_kurator_acf_prepare_field'
 //
 //// run after ACF saves the $_POST['fields'] data
 //add_action('acf/save_post', 'my_post_title_updater', 20);
->>>>>>> 8f22222a1e41bfd846baa0dccc36be3835a3b428
+//>>>>>>> 8f22222a1e41bfd846baa0dccc36be3835a3b428
