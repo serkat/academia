@@ -1,6 +1,0 @@
-﻿Name: Добавление результатов тестирования;
-Version: 1.0;
-Support Core: 15.0.0;
-Description: Дополнение для Wp-Recall, добавляюшие Результаты тестов;
-Author: Выбойченко Валерий;
-Author Uri: aimart.me;

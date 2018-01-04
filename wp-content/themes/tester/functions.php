@@ -586,15 +586,26 @@ require get_parent_theme_file_path( '/inc/customizer.php' );
 require get_parent_theme_file_path( '/inc/icon-functions.php' );
 
 
-function getSessii( ) {
+function getActiveSession( ) {
     global $wpdb; 
     $wpdb->sessii = "{$wpdb->prefix}sessii"; 
+    // $posts = $wpdb->get_results("SELECT * FROM $wpdb->sessii");
+        $today=date("Y-m-d H:i:s");
+        $sessii = $wpdb->get_row("SELECT * FROM `wp_sessii` WHERE `state`=1");
+//    );
+    return $sessii;
+    
+}
+
+function getSessii( ) {
+    global $wpdb;
+    $wpdb->sessii = "{$wpdb->prefix}sessii";
     // $posts = $wpdb->get_results("SELECT * FROM $wpdb->sessii");
         $today=date("Y-m-d H:i:s");
         $sessii = $wpdb->get_row("SELECT name, to_date FROM $wpdb->sessii  WHERE '".$today."' BETWEEN `from_date` AND `to_date`"
     );
     return $sessii;
-    
+
 }
 
 function getTest( ) {
@@ -606,6 +617,7 @@ function getTest( ) {
 add_action('acf/save_post', 'my_save_post');
 
 function my_pre_save_post( $post_id ) {
+
 	$cur_user_id = get_current_user_id();
 	//var_dump($cur_user_id);
 	//var_dump($post_id);
@@ -621,7 +633,7 @@ function my_pre_save_post( $post_id ) {
 		);
 
 	} elseif ($post_id == 'new_test') {
-		$nw_title = $_POST[acf][field_5a3d11b912cb0]." ".$_POST[acf][field_5a3d11f912cb1];
+		$nw_title = $_POST[acf][field_5a3d11b912cb0]." ".$_POST[acf][field_5a3d11f912cb1]." ".$_POST[acf][field_5a40d0d4bd545]." Класс ".get_the_title($_POST[acf][field_5a4213ecb8c5e])." ".get_the_title($_POST[acf][field_5a3d2898227f8]);
 		$post = array(
 			'post_status'  => 'draft' ,
 			'post_title'  => $nw_title ,
@@ -637,7 +649,6 @@ function my_pre_save_post( $post_id ) {
 		return $post_id;
     }
 
-//<<<<<<< HEAD
     // insert the post
     $post_id = wp_insert_post( $post );
 
@@ -645,17 +656,30 @@ function my_pre_save_post( $post_id ) {
 //	// update who create kurator
 	if( $input_post_type == 'bid' ) {
 	    $bid_post = get_post($post_id);
+		$session = getActiveSession();
+		$bidid = ($session->uniq_number)."".$post_id;
 		$my_post = array();
 		$my_post['ID'] = $post_id;
-		$my_post['post_title'] = "Заявка №".$post_id;
-		wp_update_post( wp_slash($my_post) );
-    // echo '<pre>';
-	// var_dump($post_id);
-	// echo '</pre>';
-	// echo '<pre>';
-	update_post_meta( $post_id, 'bid_id', 'Steve123' );
-	// var_dump($bid_post);die();
-	// echo '</pre>';
+		$my_post['post_title'] = "Заявка №".$bidid;
+
+		wp_update_post( wp_slash($my_post));
+
+//    echo '<pre>';
+//	var_dump($post_id);
+//	echo '</pre>';
+	$session = getActiveSession();
+//	echo '<pre>';
+//	var_dump($session->uniq_number);
+//
+//	echo '</pre>';
+//	echo '<pre>';
+	$bidid = $post_id."".($session->uniq_number);
+	update_post_meta( $post_id, 'bid_id', $bidid);
+//	var_dump($bidid);
+//	echo '</pre>';
+//	echo '<pre>';
+//		var_dump(get_post($post_id));die();
+//	echo '</pre>';
 	    }
 
 //		// save a basic text value
@@ -663,66 +687,52 @@ function my_pre_save_post( $post_id ) {
 //		$value     = $cur_user_id;
 //		update_field( $field_key, $value, $post_id );
 //	}
-//=======
-    // Create a new post
-    $post = array(
-        'post_status'  => 'draft' ,
-        'post_title'  => 'А может быть $_POST переменны' ,
-        'post_type'  => 'test_results' ,
-    );
-
-    // insert the post
-    $post_id = wp_insert_post( $post );
-
-//>>>>>>> 8f22222a1e41bfd846baa0dccc36be3835a3b428
     // return the new ID
     return $post_id;
 
 }
 
-//<<<<<<< HEAD
 add_filter('acf/pre_save_post' , 'my_pre_save_post', 10, 1 );
-
 
 
 
 $klass = $_GET['klass'];
 add_filter('acf/load_field/name=klass',
-     function($field) use ($klass) {           
-	     $field['default_value'] = $klass;
-	     return $field;
-     }
+	function($field) use ($klass) {
+		$field['default_value'] = $klass;
+		return $field;
+	}
 );
 $sid = $_GET['sid'];
 add_filter('acf/load_field/name=sessia',
-     function($field) use ($sid) {           
-	     $field['default_value'] = $sid;
-	     return $field;
-     }
+	function($field) use ($sid) {
+		$field['default_value'] = $sid;
+		return $field;
+	}
 );
 $curid = $_GET['curid'];
 add_filter('acf/load_field/name=curator',
-     function($field) use ($curid) {           
-	     $field['default_value'] = $curid;
-	     return $field;
-     }
+	function($field) use ($curid) {
+		$field['default_value'] = $curid;
+		return $field;
+	}
 );
 $bidid = $_GET['bidid'];
 add_filter('acf/load_field/name=number_bids',
-     function($field) use ($bidid) {           
-	     $field['default_value'] = $bidid;
-	     return $field;
-     }
+	function($field) use ($bidid) {
+		$field['default_value'] = $bidid;
+		return $field;
+	}
 );
 $subid = $_GET['subid'];
 add_filter('acf/load_field/name=predmet2',
-     function($field) use ($subid) {           
-	     $field['default_value'] = $subid;
-	     return $field;
-     }
+	function($field) use ($subid) {
+		$field['default_value'] = $subid;
+		return $field;
+	}
 );
 
-/* Дополнительные сортируемые колонки для постов CPT Результаты в админке 
+/* Дополнительные сортируемые колонки для постов CPT Результаты в админке
 ------------------------------------------------------------------------ */
 // создаем новую колонку
 add_filter('manage_test_results_posts_columns', 'add_sessia_column', 4);
@@ -735,12 +745,12 @@ function add_sessia_column( $columns ){
 	$out = array();
 	foreach($columns as $col=>$name){
 		if(++$i==3){
-            $out['number_bids'] = 'Номер заявки';
+			$out['number_bids'] = 'Номер заявки';
 			$out['sessia'] = 'Сессия';
 			$out['curator'] = 'Куратор';
 			$out['predmet2'] = 'Предмет';
 			$out['klass'] = 'Класс';
-        }
+		}
 
 		$out[$col] = $name;
 	}
@@ -751,26 +761,26 @@ function add_sessia_column( $columns ){
 add_filter('manage_test_results_posts_custom_column', 'fill_sessia_column', 5, 2);
 function fill_sessia_column( $colname, $post_id ){
 	if( $colname === 'sessia' ){
-        echo get_the_title(get_post_meta($post_id, 'sessia', 1));
+		echo get_the_title(get_post_meta($post_id, 'sessia', 1));
 		//echo get_post_meta($post_id, 'sessia', 1);
 	}
-    if( $colname === 'number_bids' ){
-        
+	if( $colname === 'number_bids' ){
+
 		echo get_the_title(get_post_meta($post_id, 'number_bids', 1));
 		//echo get_post_meta($post_id, 'number_bids', 1);
 	}
-    if( $colname === 'curator' ){
-        
+	if( $colname === 'curator' ){
+
 		echo get_the_title(get_post_meta($post_id, 'curator', 1));
 		//echo get_post_meta($post_id, 'number_bids', 1);
 	}
-    if( $colname === 'predmet2' ){
-        
+	if( $colname === 'predmet2' ){
+
 		echo get_the_title(get_post_meta($post_id, 'predmet2', 1));
 		//echo get_post_meta($post_id, 'predmet2', 1);
-    }
-    if( $colname === 'klass' ){
-        
+	}
+	if( $colname === 'klass' ){
+
 		//echo get_the_title(get_post_meta($post_id, 'klass', 1));
 		echo get_post_meta($post_id, 'klass', 1)." Класс";
 	}
@@ -786,7 +796,7 @@ function add_sessia_column_css(){
         <style type="text/css">.column-curator{width:10%;}</style>
         <style type="text/css">.column-predmet2{width:10%;}</style>
         <style type="text/css">.column-klass{width:10%;}</style>
-        
+
         ';
 }
 
@@ -810,112 +820,3 @@ function add_column_sessia_request( $object ){
 	$object->set('meta_key', 'sessia');
 	$object->set('orderby', 'meta_value_num');
 }
-
-
-
-//=======
-add_filter('acf/pre_save_post' , 'create_title_test_results_save_post', 10, 1 );
-
-//function create_title_kurators_save_post( $post_ids ) {
-//
-//    // check if this is to be a new post
-//    if( $post_ids != 'new_post' ) {
-//
-//        return $post_id;
-//
-//    }
-//
-//    // Create a new post
-//    $post = array(
-////        'post_status'  => 'draft' ,
-//        'post_title'  => 'А может быть $_POST переменны' ,
-//        'post_type'  => 'kurators' ,
-//    );
-//
-//    // insert the post
-//    $post_ids = wp_insert_post( $post );
-//
-//    // return the new ID
-//    return $post_ids;
-//
-//}
-//
-//add_filter('acf/pre_save_post' , 'create_title_kurators_save_post', 10, 1 );
-
-function my_acf_prepare_field( $field ) {
-	global $wpdb;
-	$wpdb->sessii = "{$wpdb->prefix}sessii";
-	$sessii = $wpdb->get_results("SELECT uniq_number FROM $wpdb->sessii WHERE state=1");
-	$sessii_id = $sessii[0]->uniq_number;
-	var_dump($sessii_id);
-	if( $field['value'] ) {
-
-		$field['disabled'] = true;
-
-	}
-
-	return $field;
-
-}
-
-
-// all
-// add_filter('acf/prepare_field', 'my_acf_prepare_field');
-
-// type
-// add_filter('acf/prepare_field/type=text', 'my_acf_prepare_field');
-
-// key
-// add_filter('acf/prepare_field/key=field_508a263b40457', 'my_acf_prepare_field');
-
-// name
-add_filter('acf/prepare_field/name=hidden_field', 'my_acf_prepare_field');
-
-
-function bid_title_acf_prepare_field( $field ) {
-	$field['value'] = "some title";
-	var_dump($field['value']);
-	return $field;
-
-}
-
-add_filter('acf/prepare_field/name=bid_title', 'bid_title_acf_prepare_field');
-
-function who_add_kurator_acf_prepare_field( $field ) {
-	$cur_user_id = get_current_user_id();
-	echo $cur_user_id;
-	$field['value']=$cur_user_id;
-    return $field;
-
-}
-
-add_filter('acf/prepare_field/name=who_add', 'who_add_kurator_acf_prepare_field');
-
-//Auto add and update Title field:
-//function my_post_title_updater( $post_id ) {
-//
-//	$my_post = array();
-//	$my_post['ID'] = $post_id;
-//
-//	$name           = get_field('kur_firstname');
-//	$lastname         = get_field('kur_lastname');
-//	$middlename         = get_field('kur_middlename');
-//
-//	$my_post['post_title'] = $lastname . ' ' .$name . ' ' . $middlename;
-//	var_dump($my_post['post_title']);
-//	if ( get_post_type() == 'kurators' ) {
-//		$my_post['post_title'] = $lastname . ' ' .$name . ' ' . $middlename;
-//	} /*elseif ( get_post_type() == 'products' ) {
-//		$my_post['post_title'] = get_field('kitName') . ' (' . get_field('manufacturer_name', $manufacturer->ID) . ' ' . get_field('kitNumber') . ')';
-//	} elseif ( get_post_type() == 'reviews' ) {
-//		$my_post['post_title'] = get_field('kitName', $review_target_product) . ' (' . get_field('manufacturer_name', $manufacturer_target) . ' ' . get_field('kitNumber', $review_target_product) . ')';
-//	}*/
-//
-//	// Update the post into the database
-//	wp_update_post( $my_post );
-//
-//}
-//
-//// run after ACF saves the $_POST['fields'] data
-//add_action('acf/save_post', 'my_post_title_updater', 20);
-//>>>>>>> 8f22222a1e41bfd846baa0dccc36be3835a3b428
